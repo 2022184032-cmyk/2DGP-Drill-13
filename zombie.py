@@ -58,6 +58,15 @@ class Zombie:
             Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, self.size, self.size)
         draw_rectangle(*self.get_bb())
 
+    def handle_collision(self, group, other):
+        if group == 'zombie:ball':
+            self.hit_count += 1
+            if self.hit_count == 1:
+                self.size = 100
+            elif self.hit_count ==2:
+                game_world.remove_object(self)
+
+
     def handle_event(self, event):
         pass
 
