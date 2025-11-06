@@ -63,7 +63,7 @@ class Zombie:
             self.hit_count += 1
             if self.hit_count == 1:
                 self.size = 100
-            elif self.hit_count ==2:
+            elif self.hit_count >= 2:
                 game_world.remove_object(self)
 
 
